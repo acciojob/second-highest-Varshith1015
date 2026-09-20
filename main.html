@@ -11,10 +11,12 @@
 		function secondHighest(arr) {
 			//Write your code here
 			if(arr.length<2){
-				return Infinity;
+				return -Infinity;
 			}
 			let largest=Math.max(arr[0],arr[1]);
 			let slargest=Math.min(arr[0],arr[1]);
+			
+			
 			for(let i=2;i<arr.length;i++){
 				if(arr[i]>=slargest && arr[i]<largest){
 					slargest=arr[i];
@@ -23,6 +25,9 @@
 					slargest=largest;
 					largest=arr[i];
 				}
+			}
+			if(largest===slargest){
+				return -Infinity;
 			}
 			return slargest;
 		}
@@ -36,7 +41,7 @@
 
 			
 		}
-		Main();
+		//Main();
 	</script>
 
     <script type="text/javascript" src="./script.js">
